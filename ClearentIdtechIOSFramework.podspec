@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ClearentIdtechIOSFramework"
-  s.version      = "1.0.14"
+  s.version      = "1.0.17"
   s.summary      = "Clearent IOS Framework supporting IDTech credit card reader."
 
   # This description is used to generate tags and improve search results.
@@ -63,15 +63,8 @@ Pod::Spec.new do |s|
   #  If this Pod runs only on iOS or OS X, then specify the platform and
   #  the deployment target. You can optionally include the target after the platform.
   #
-
-  # s.platform     = :ios
-  s.platform     = :ios, "10.1"
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
+  s.platform     = :ios
+  s.ios.deployment_target = "10.1"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,15 +84,16 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  #s.source_files  = "ClearentIdtechIOSFramework", "ClearentIdtechIOSFramework/IDTech.framework"
-  #s.source_files  = "ClearentIdtechIOSFramework/IDTech/Versions/A/Headers/*.{h}", "ClearentIdtechIOSFramework/Clearent*.{h,m}"
-
-  s.source_files  = "ClearentIdtechIOSFramework/ClearentIdtechIOSFramework.h", "ClearentIdtechIOSFramework/Clearent_VP3300.h", "ClearentIdtechIOSFramework/ClearentDelegate.h", "ClearentIdtechIOSFramework/ClearentPublicVP3300Delegate.h","ClearentIdtechIOSFramework/ClearentTransactionTokenRequest.h","ClearentIdtechIOSFramework/ClearentConfigurator.h", "ClearentIdtechIOSFramework/ClearentEmvConfigurator.h", "ClearentIdtechIOSFramework/ClearentConfiguration.h", "ClearentIdtechIOSFramework/ClearentConfigFetcher.h","ClearentIdtechIOSFramework/ClearentManualEntry.h","ClearentIdtechIOSFramework/ClearentManualEntryDelegate.h","ClearentIdtechIOSFramework/ClearentCard.h"
+  s.source_files = "ClearentIdtechIOSFramework/*.{h,m}","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/*.h"
   #s.exclude_files = "ClearentIdtechIOSFramework/ID*.h"
 
   s.vendored_frameworks = 'ClearentIdtechIOSFramework/IDTech.framework'
-  s.public_header_files = "ClearentIdtechIOSFramework/ClearentIdtechIOSFramework.h","ClearentIdtechIOSFramework/Clearent_VP3300.h","ClearentIdtechIOSFramework/ClearentManualEntry.h","ClearentIdtechIOSFramework/ClearentDelegate.h","ClearentIdtechIOSFramework/ClearentPublicVP3300Delegate.h","ClearentIdtechIOSFramework/ClearentTransactionTokenRequest.h","ClearentIdtechIOSFramework/ClearentConfigurator.h","ClearentIdtechIOSFramework/ClearentConfigFetcher.h","ClearentIdtechIOSFramework/ClearentConfiguration.h","ClearentIdtechIOSFramework/ClearentEmvConfigurator.h","ClearentIdtechIOSFramework/ClearentCard.h","ClearentIdtechIOSFramework/ClearentManualEntryDelegate.h","IDTech.framework//Headers/IDT_VP3300.h"
 
+  #s.public_header_files  = 'ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/*.h'
+
+  #s.public_header_files = "ClearentIdtechIOSFramework/ClearentIdtechIOSFramework.h","ClearentIdtechIOSFramework/Clearent_VP3300.h","ClearentIdtechIOSFramework/ClearentManualEntry.h","ClearentIdtechIOSFramework/ClearentPublicVP3300Delegate.h","ClearentIdtechIOSFramework/ClearentTransactionTokenRequest.h","ClearentIdtechIOSFramework/ClearentCard.h","ClearentIdtechIOSFramework/ClearentManualEntryDelegate.h"
+
+  s.public_header_files = "ClearentIdtechIOSFramework/ClearentIdtechIOSFramework/*.{h}","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDT_VP3300.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDTMSRData.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDTCommon.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDT_Device.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/APDUResponse.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDTEMVData.h"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -112,7 +106,7 @@ Pod::Spec.new do |s|
    s.resource  = "ClearentIdtechIOSFramework/IDTech.bundle"
   # s.resources = "Resources/*.png"
 
-   s.preserve_paths = "ClearentIdtechIOSFramework/IDTech.bundle","$(SDKROOT)/IdTech.framework"
+  #  s.preserve_paths = "ClearentIdtechIOSFramework/IDTech.bundle","$(SDKROOT)/IdTech.framework"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -120,14 +114,7 @@ Pod::Spec.new do |s|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-
-   #s.frameworks = "IDTech", "CFNetwork", "AudioToolbox","AVFoundation","MediaPlayer","ExternalAccessory"
-   #s.framework      = "IDTech"
-   s.framework  = "CFNetwork", "AudioToolbox","AVFoundation","MediaPlayer","ExternalAccessory"
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-
-
+   s.frameworks = "CFNetwork", "AudioToolbox","AVFoundation","MediaPlayer","ExternalAccessory"
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If your library depends on compiler flags you can set them in the xcconfig hash
@@ -138,5 +125,4 @@ Pod::Spec.new do |s|
 
    #s.dependency "CFNetwork", "~> 1.4", "AudioToolbox"
    #s.dependency 'AFNetworking', '~> 2.3'
-
 end
