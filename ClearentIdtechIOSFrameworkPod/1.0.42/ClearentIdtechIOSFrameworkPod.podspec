@@ -33,10 +33,10 @@ Pod::Spec.new do |s|
     s.frameworks = 'CFNetwork', 'AudioToolbox','AVFoundation','MediaPlayer','ExternalAccessory'
 
     s.resource_bundles = {
-        'ClearentIdtechIOSFrameworkPod' => ['ClearentIdtechIOSFrameworkPod/ClearentIdtechIOSFramework.framework/IDTech.bundle']
+        'ClearentIdtechIOSFrameworkPod' => ['ClearentIdtechIOSFrameworkPod/IDTech.bundle']
     }
 
-    s.preserve_paths = 'ClearentIdtechIOSFrameworkPod/IDTech.framework', 'ClearentIdtechIOSFrameworkPod/ClearentIdtechIOSFramework.framework','ClearentIdtechIOSFrameworkPod/ClearentIdtechIOSFramework.framework/IDTech.bundle'
+    s.preserve_paths = 'ClearentIdtechIOSFrameworkPod/IDTech.framework', 'ClearentIdtechIOSFrameworkPod/ClearentIdtechIOSFramework.framework','ClearentIdtechIOSFrameworkPod/IDTech.bundle'
     
     #s.dependency 'IDTechPod', '0.1.5'
     
