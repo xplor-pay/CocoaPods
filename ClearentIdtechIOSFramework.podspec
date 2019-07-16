@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ClearentIdtechIOSFramework"
-  s.version      = "1.0.17"
+  s.version      = "1.0.18"
   s.summary      = "Clearent IOS Framework supporting IDTech credit card reader."
 
   # This description is used to generate tags and improve search results.
@@ -84,16 +84,13 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files = "ClearentIdtechIOSFramework/*.{h,m}","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/*.h"
-  #s.exclude_files = "ClearentIdtechIOSFramework/ID*.h"
+  s.source_files = "ClearentIdtechIOSFramework/*.{h,m}","IDTech.framework/Versions/A/Headers/*.{h}"
+  s.exclude_files = "ClearentIdtechIOSFramework/ClearentIdtechIOSFramework.h"
 
-  s.vendored_frameworks = 'ClearentIdtechIOSFramework/IDTech.framework'
+  #s.vendored_frameworks = 'ClearentIdtechIOSFramework/IDTech.framework'
+   s.vendored_frameworks = 'IDTech.framework'
 
-  #s.public_header_files  = 'ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/*.h'
-
-  #s.public_header_files = "ClearentIdtechIOSFramework/ClearentIdtechIOSFramework.h","ClearentIdtechIOSFramework/Clearent_VP3300.h","ClearentIdtechIOSFramework/ClearentManualEntry.h","ClearentIdtechIOSFramework/ClearentPublicVP3300Delegate.h","ClearentIdtechIOSFramework/ClearentTransactionTokenRequest.h","ClearentIdtechIOSFramework/ClearentCard.h","ClearentIdtechIOSFramework/ClearentManualEntryDelegate.h"
-
-  s.public_header_files = "ClearentIdtechIOSFramework/ClearentIdtechIOSFramework/*.{h}","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDT_VP3300.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDTMSRData.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDTCommon.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDT_Device.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/APDUResponse.h","ClearentIdtechIOSFramework/IDTech.framework/Versions/A/Headers/IDTEMVData.h"
+  s.public_header_files = "IDTech.framework/Versions/A/Headers/IDTech.h", "ClearentIdtechIOSFramework/Clearent_VP3300.h","ClearentIdtechIOSFramework/ClearentDelegate.h","ClearentIdtechIOSFramework/ClearentPublicVP3300Delegate.h","ClearentIdtechIOSFramework/ClearentTransactionTokenRequest.h","ClearentIdtechIOSFramework/ClearentConfigurator.h","ClearentIdtechIOSFramework/ClearentEmvConfigurator.h"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -103,10 +100,10 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-   s.resource  = "ClearentIdtechIOSFramework/IDTech.bundle"
+   s.resource  = "IDTech.bundle"
   # s.resources = "Resources/*.png"
 
-  #  s.preserve_paths = "ClearentIdtechIOSFramework/IDTech.bundle","$(SDKROOT)/IdTech.framework"
+   s.preserve_paths = "IdTech.framework"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -125,4 +122,7 @@ Pod::Spec.new do |s|
 
    #s.dependency "CFNetwork", "~> 1.4", "AudioToolbox"
    #s.dependency 'AFNetworking', '~> 2.3'
+
+    s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(inherited) "IDTech.framework/Versions/A/Headers"' }
+
 end
