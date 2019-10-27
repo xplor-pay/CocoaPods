@@ -10,7 +10,7 @@
 
 :three: - Cd to project root
 
-:four: - run this command -> pod init
+:four: - run this command -> pod init (if you do not have CocoaPods installed run this command -> sudo gem install cocoapods)
 
 :five: - Now you have a Podfile. Edit the podfile and put this in it:
 
