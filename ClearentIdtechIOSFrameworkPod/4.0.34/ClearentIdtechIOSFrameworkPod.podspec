@@ -35,12 +35,15 @@ Pod::Spec.new do |s|
             'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
             'ARCHS' => 'arm64 x86_64',
             'VALID_ARCHS' =>'arm64',
-            'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
+            'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+            'DEFINES_MODULE' => 'YES'}
 
     s.user_target_xcconfig = {'OTHER_SWIFT_FLAGS' => '-Xcc -Wno-error=non-modular-include-in-framework-module' ,
                   'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
                   'ARCHS' => 'arm64 x86_64',
                     'VALID_ARCHS' =>'arm64',
-                    'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
+                    'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+                    'DEFINES_MODULE' => 'YES'
+                    }
 
 end
