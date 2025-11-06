@@ -24,8 +24,10 @@ Pod::Spec.new do |s|
     s.platform         = :ios, "13.0"
     
     s.swift_version    = '5.0'
-
-    s.vendored_frameworks = 'ClearentIdtechIOSFrameworkPod/IDTech.xcframework','ClearentIdtechIOSFrameworkPod/ClearentIdtechIOSFramework.xcframework'
+    
+    s.preserve_paths = 'ClearentIdtechIOSFrameworkPod/IDTech.xcframework'
+    
+    s.vendored_frameworks = 'ClearentIdtechIOSFrameworkPod/ClearentIdtechIOSFramework.xcframework'
 
     s.frameworks = 'CFNetwork', 'AudioToolbox','AVFoundation','MediaPlayer','ExternalAccessory'
 
