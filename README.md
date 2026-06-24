@@ -23,7 +23,7 @@ target 'PROJECTNAME' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'ClearentIdtechIOSFrameworkPod', '2.0.0'
+  pod 'ClearentIdtechIOSFrameworkPod', '4.0.164'
 
 end
 ```
